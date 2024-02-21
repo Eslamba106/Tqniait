@@ -41,6 +41,7 @@ Route::controller(PostController::class)->group(function(){
     Route::post('/posts/create','create')->middleware('auth:sanctum');
     Route::post('/posts/update','update')->middleware('auth:sanctum');
     Route::post('/posts/delete','delete')->middleware('auth:sanctum');
+    Route::get('/posts/onlydelete','onlyPostsDelete')->middleware('auth:sanctum');
 });
 
 Route::controller(StatsController::class)->group(function(){

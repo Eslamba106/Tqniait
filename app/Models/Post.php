@@ -15,9 +15,9 @@ class Post extends Model
 
     protected $table = 'posts';
 
-    public function tags(): HasMany
+    public function tags()
     {
-        return $this->hasMany(Tag::class);
+        return $this->belongsToMany(Tag::class , 'tags_posts_pivot');
     }
     public function user(){
         return $this->belongsTo(User::class);
